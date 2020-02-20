@@ -35,7 +35,7 @@
 #include <hardware/power.h>
 #include <hidl/MQDescriptor.h>
 #include <hidl/Status.h>
-#include <vendor/mokee/power/1.0/IMoKeePower.h>
+#include <vendor/lineage/power/1.0/IMoKeePower.h>
 
 namespace android {
 namespace hardware {
@@ -49,8 +49,8 @@ using PowerHint_1_2 = ::android::hardware::power::V1_2::PowerHint;
 using ::android::hardware::Return;
 using ::android::hardware::Void;
 using ::android::hardware::power::V1_2::IPower;
-using ::vendor::mokee::power::V1_0::IMoKeePower;
-using ::vendor::mokee::power::V1_0::MoKeeFeature;
+using ::vendor::lineage::power::V1_0::IMoKeePower;
+using ::vendor::lineage::power::V1_0::MoKeeFeature;
 
 struct Power : public IPower, public IMoKeePower {
     // Methods from ::android::hardware::power::V1_0::IPower follow.
@@ -69,7 +69,7 @@ struct Power : public IPower, public IMoKeePower {
     // Methods from ::android::hardware::power::V1_2::IPower follow
     Return<void> powerHintAsync_1_2(PowerHint_1_2 hint, int32_t data) override;
 
-    // Methods from ::vendor::mokee::power::V1_0::IMoKeePower follow.
+    // Methods from ::vendor::lineage::power::V1_0::IMoKeePower follow.
     Return<int32_t> getFeature(MoKeeFeature feature) override;
 };
 
